@@ -6,9 +6,15 @@ const userRoutes = require('./routes/user.routes');
 
 // Middleware
 app.use(express.json());
-app.use(cors({
-    origin:"http://localhost:5173"
-}))
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://task-manager-xi-puce.vercel.app",
+      "https://task-manager.atultiwari.me",
+    ],
+  }),
+);
 
 // Routes
 
